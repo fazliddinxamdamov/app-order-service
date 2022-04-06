@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fast_food
+    username: postgres
+    password: 690
+  application:
+    name: ORDER-SERVICE
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        connection:
+          charset: UTF-8
+          hbm2ddl:
+            import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+  sql:
+    init:
+      mode: always
+
